@@ -21,3 +21,7 @@ project:
     git commit -m "Deploy `date`"
     git remote add heroku git@heroku.com:my-haskell-project.git
     git push -f heroku deploy:master
+
+This work is largely based off John Bender's [blog
+post](http://johnbender.us/2011/03/05/snap-setup-from-scratch-the-vagrant-way/)
+and [project](https://github.com/johnbender/snap-skeleton).
