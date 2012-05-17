@@ -5,10 +5,7 @@ Vagrant::Config.run do |config|
   config.vm.box = "lucid64"
   config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
 
-  config.vm.customize do |vm|
-    vm.name = "Haskell on Heroku"
-    vm.memory_size = 768
-  end
+  config.vm.customize ["modifyvm", :id, "--name", "Haskell on Heroku", "--memory", "769"]
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
