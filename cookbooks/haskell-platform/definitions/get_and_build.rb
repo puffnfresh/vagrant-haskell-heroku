@@ -7,7 +7,7 @@ define( :get_and_build,
         :not_if => "" ) do
 
   log "Downloading package..."
-  execute "download package" do
+  execute "download package #{params[:package_output]}" do
     command "wget #{params[:package_url]} -O #{params[:package_output]}"
     cwd params[:working_dir]
     action :run
@@ -15,7 +15,7 @@ define( :get_and_build,
   end
 
   log "Untarring package..."
-  execute "untar package" do
+  execute "untar package #{params[:package_output]}" do
     command "tar --overwrite -#{params[:untar_flags]} #{params[:package_output]}"
     cwd params[:working_dir]
     action :run
@@ -23,7 +23,7 @@ define( :get_and_build,
   end
 
   log "Build and install..."
-  execute "make and install" do
+  execute "make and install #{params[:package_output]}" do
     command "./configure; make; make install"
     cwd (params[:working_dir] + params[:untar_dir])
     action :run
