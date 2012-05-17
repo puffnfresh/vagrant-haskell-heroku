@@ -1,4 +1,5 @@
 #packages required for haskell platform to build
+package "build-essential"
 package "libgmp3-dev"
 package "zlib1g-dev"
 package "libglc-dev"
