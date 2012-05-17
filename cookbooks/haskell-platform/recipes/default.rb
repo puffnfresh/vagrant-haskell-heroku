@@ -23,7 +23,7 @@ end
 
 
 get_and_build "ghc binary" do
-  package_url "http://www.haskell.org/ghc/dist/#{node[:ghc_version]}/ghc-#{node[:ghc_version]}-x86_64-unknown-linux.tar.bz2
+  package_url "http://www.haskell.org/ghc/dist/#{node[:ghc_version]}/ghc-#{node[:ghc_version]}-x86_64-unknown-linux.tar.bz2"
   package_output ghc_tar
   working_dir dir
   untar_dir ghc
