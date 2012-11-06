@@ -8,6 +8,9 @@ Vagrant::Config.run do |config|
   config.vm.customize ["modifyvm", :id, "--name", "Haskell with Heroku", "--memory", "769"]
 
   config.vm.provision :chef_solo do |chef|
+    chef.recipe_url = "http://files.vagrantup.com/getting_started/cookbooks.tar.gz"
+    chef.add_recipe "apt"
+
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe "haskell-platform"
     chef.add_recipe "heroku-toolbelt"
